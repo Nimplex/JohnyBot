@@ -1,0 +1,27 @@
+{
+  "name": "nudabot",
+  "version": "1.0.0",
+  "description": "NudaBot, multi purpose discord bot.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nimplex/NudaBot.git"
+  },
+  "keywords": [
+    "discordjs",
+    "discord",
+    "bot"
+  ],
+  "author": "Nimplex",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Nimplex/NudaBot/issues"
+  },
+  "homepage": "https://github.com/Nimplex/NudaBot#readme",
+  "dependencies": {
+    "discord.js": "^12.4.1"
+  }
+}
