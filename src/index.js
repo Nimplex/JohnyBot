@@ -20,7 +20,7 @@ client.on('message', async message => {
   const args    = message.content.slice(prefix.length).split(/ +/)
   const command = args.shift().toLowerCase()
   
-  if (client.commands.has(command)) return
+  if (!client.commands.has(command)) return
 
   try {
     client.commands.get(command).execute(client, message, args)
