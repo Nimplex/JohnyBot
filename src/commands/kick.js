@@ -5,16 +5,16 @@ exports.execute = (client, message, args) => {
   const reason = args.slice(1).join(' ')
   try {
     if (!reason) {
-      mention.ban()
+      mention.kick()
       client.modules.embed({
         message: message,
-        author: [`${mention.user.tag} has been banned.`, mention.user.displayAvatarURL]
+        author: [`${mention.user.tag} has been kicked.`, mention.user.displayAvatarURL]
       })
     } else {
-      mention.ban({ reason: reason, days: 7 })
+      mention.kick(reason)
       client.modules.embed({
         message: message,
-        author: [`${mention.user.tag} has been banned.`, mention.user.displayAvatarURL]
+        author: [`${mention.user.tag} has been kicked.`, mention.user.displayAvatarURL]
       })
     }
   } catch(error) {
@@ -23,12 +23,12 @@ exports.execute = (client, message, args) => {
 }
 
 exports.info = {
-  triggers: ['ban'],
-  description: 'Ban someone.',
+  triggers: ['kick'],
+  description: 'Kick someone.',
   usage: '<@mention> [reason]',
   permissions: {
-    bot: ['BAN_MEMBERS'],
-    member: ['BAN_MEMBERS'],
+    bot: ['KICK_MEMBERS'],
+    member: ['KICK_MEMBERS'],
     developer: false
   }
 }
