@@ -3,7 +3,7 @@ exports.execute = (client, message, args) => {
   const text = args.join(' ').split('').reverse().join('')
   client.modules.embed({
     message: message,
-    title: `:arrows_counterclockwise:`,
+    title: `:arrows_counterclockwise: Reverse`,
     description: `\`\`\`${text}\`\`\``
   })
 }
