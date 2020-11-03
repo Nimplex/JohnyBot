@@ -4,6 +4,7 @@ NudaBot, multi purpose discord bot.
 ## Requirments:
 ```
 discord.js ^12.3.1
+chalk      ^4.1.0
 ```
 
 ## Guide:
@@ -17,6 +18,8 @@ npm install
 ```js
 module.exports = {
   prefix: ',',
+  color: '#ffcc00',
+  rcolor: '#e04f36',
   token: 'bot-token'
 }
 ```
