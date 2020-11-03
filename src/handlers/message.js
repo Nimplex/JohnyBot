@@ -11,7 +11,8 @@ module.exports = message => {
     else if (!message.member.permissions.has(cmd.info.permissions.member)) return client.modules.error(message, `You need to have ${cmd.info.permissions.member} permission(s) to use this command.`)
     else if (!message.guild.me.permissions.has(cmd.info.permissions.bot)) return client.modules.error(message, `I'm missing permission(s): ${cmd.info.permissions.member}.`)
     else cmd.execute(client, message, args)
-  } catch(err) {
-    client.modules.error(message, err)
+  } catch(error) {
+    client.modules.error(message, error)
   }
+  process.on('unhandledRejection', error => client.modules.error(message, error))
 }
