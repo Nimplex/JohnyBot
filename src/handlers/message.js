@@ -6,7 +6,10 @@ module.exports = message => {
 
   if(!client.commands.has(command)) return
   try {
-    client.commands.get(command).execute(client, message, args)
+    const cmd = client.commands.get(command)
+    if (cmd.info.permissions.developer && message.author.id !== '364056796932997121') return client.modules.error(message, 'You need to have developer permissions to use this command.')
+    else if (!message.member.permissions.has(cmd.info.permissions.member)) return client.modules.error(message, `You need to have ${cmd.info.permissions.member} permission(s) to use this command.`)
+    else cmd.execute(client, message, args)
   } catch(err) {
     client.modules.error(message, err)
   }

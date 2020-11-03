@@ -5,5 +5,12 @@ exports.execute = (client, message, args) => {
 }
 
 exports.info = {
-  triggers: ['test']
+  triggers: ['test'],
+  description: null,
+  usage: null,
+  permissions: {
+    bot: ['BAN_MEMBERS'],
+    member: ['BAN_MEMBERS'],
+    developer: false
+  }
 }
