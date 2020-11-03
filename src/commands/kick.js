@@ -1,7 +1,7 @@
 exports.execute = (client, message, args) => {
   const mention = message.mentions.members.first()
   if (!mention) return client.modules.error(message, 'You should mention someone first.')
-  if (!mention.bannable) return client.modules.error(message, `You can't ban ${mention.user.tag}.`)
+  if (!mention.kickable) return client.modules.error(message, `You can't kick ${mention.user.tag}.`)
   const reason = args.slice(1).join(' ')
   try {
     if (!reason) {
