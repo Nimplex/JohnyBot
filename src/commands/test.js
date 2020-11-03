@@ -1,8 +1,9 @@
-exports.execute = async(client, message, args) => {
-  message.reply(args[0])
+exports.execute = (client, message, args) => {
+  client.modules.embed({
+    message: message
+  })
 }
 
 exports.info = {
-  triggers: ['test'],
-  description: 'test'
+  triggers: ['test']
 }
