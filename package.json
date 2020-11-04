@@ -23,6 +23,7 @@
   "homepage": "https://github.com/Nimplex/NudaBot#readme",
   "dependencies": {
     "chalk": "^4.1.0",
-    "discord.js": "^12.4.1"
+    "discord.js": "^12.4.1",
+    "node-fetch": "^2.6.1"
   }
 }

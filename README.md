@@ -4,6 +4,7 @@ JohnyBot, multi purpose discord bot.
 ## Requirments:
 ```
 discord.js ^12.3.1
+node-fetch ^2.6.1
 chalk      ^4.1.0
 ```
 
@@ -14,17 +15,7 @@ chalk      ^4.1.0
 npm install
 ```
 
-2. Create config.js file - it should look something like this
-```js
-module.exports = {
-  prefix: ',',
-  color: '#ffcc00',
-  rcolor: '#e04f36',
-  token: 'bot-token'
-}
-```
-
-3. To run bot use
+2. To run bot use
 ```shell
 node src/index.js
 ```
