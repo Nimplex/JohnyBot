@@ -22,6 +22,6 @@ module.exports = data => {
   if (config.author)      embed.setAuthor(config.author[0], config.author[1])
   if (config.footer)      embed.setFooter(config.footer)
   if (config.timestamp)   embed.setTimestamp(config.timestamp)
-  if (config.fields)      embed.addFields(config.fields)
+  if (config.fields)    { config.fields.forEach(field => embed.addField(field[0], field[1], field[2])) }
   config.message.channel.send(embed)
 }

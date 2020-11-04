@@ -21,7 +21,7 @@ exports.execute = (client, message, args) => {
 }
 
 exports.info = {
-  triggers: ['8ball'],
+  triggers: ['8ball', '8b'],
   description: 'Ask a question and get a simple answer.',
   usage: '<question>',
   permissions: {
