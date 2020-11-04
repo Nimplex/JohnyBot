@@ -1,5 +1,5 @@
-# NudaBot
-NudaBot, multi purpose discord bot.
+# JohnyBot
+JohnyBot, multi purpose discord bot.
 
 ## Requirments:
 ```
