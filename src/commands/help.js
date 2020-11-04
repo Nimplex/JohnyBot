@@ -1,6 +1,23 @@
 exports.execute = (client, message, args) => {
   if (!args[0]) {
-    console.log(client.commands)
+    let fields = [], tmp = []
+
+    client.commands.forEach(command => {
+      if (!tmp[command.info.category]) tmp[command.info.category] = []
+      if (!tmp[command.info.category].includes(command.info.triggers[0])) tmp[command.info.category].push(command.info.triggers[0])
+    })
+
+    const categories = Object.keys(tmp)
+
+    categories.forEach(category => {
+      fields.push([category, `\`\`\`${tmp[category]}\`\`\``])
+    })
+    
+    client.modules.embed({
+      message: message,
+      title: `Help.`,
+      fields: fields
+    })
   } else {
     if (!client.commands.has(args[0])) return
     else {
