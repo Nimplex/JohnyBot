@@ -1,3 +1,4 @@
 module.exports = message => {
-  Johny.console.log(message)
+  if (message.author.bot) return
+  Johny.models.embed({ object: message })
 }
