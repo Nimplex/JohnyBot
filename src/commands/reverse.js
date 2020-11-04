@@ -16,5 +16,6 @@ exports.info = {
     bot: [],
     member: [],
     developer: false
-  }
+  },
+  category: 'fun'
 }

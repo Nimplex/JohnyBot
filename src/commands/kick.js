@@ -30,5 +30,6 @@ exports.info = {
     bot: ['KICK_MEMBERS'],
     member: ['KICK_MEMBERS'],
     developer: false
-  }
+  },
+  category: 'moderation'
 }

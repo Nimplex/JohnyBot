@@ -30,5 +30,6 @@ exports.info = {
     bot: ['BAN_MEMBERS'],
     member: ['BAN_MEMBERS'],
     developer: false
-  }
+  },
+  category: 'moderation'
 }

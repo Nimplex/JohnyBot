@@ -8,4 +8,5 @@ module.exports = (messageObject, errorMessage) => {
     message: messageObject
   })
   console.error(`Error: ${red(errorMessage)}`)
+  return
 }
