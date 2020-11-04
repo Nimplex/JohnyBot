@@ -1,0 +1,1 @@
+module.exports = () => Johny.console.log(`${Johny.user.tag} is ready.`)

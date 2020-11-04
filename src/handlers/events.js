@@ -1,5 +1,6 @@
-module.exports = client => {
-  require('../commands.js')(client)
-  client.once('ready', () => console.log(`${client.user.tag} is ready!`))
-  client.on('message', message => require('./message.js')(message))
+module.exports = class events {
+  constructor(Johny) {
+    Johny.on('ready', () => require('../events/ready.js')())
+    Johny.on('message', message => require('../events/message.js')(message))
+  }
 }

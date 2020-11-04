@@ -1,18 +1,19 @@
-const { Client, Collection } = require('discord.js')
+const { Client } = require('discord.js')
 
-class client extends Client {
+class Johny extends Client {
   constructor(conf) {
     super(conf)
 
-    global.client = this
-    
-    this.commands = new Collection()
-    this.modules  = require('./modules')
-    this.config   = require('../config')
-    this.events   = require('./handlers/events.js')(this)
+    global.Johny      = this
+    this.files        = ['tokens', 'prefixes', 'colors']; this.files.forEach(file => this[file] = require(`./files/${file}`))
+    this.prefix       = this.prefixes.prefix
+    this.http         = require('node-fetch')
+    this.models       = require('./models')
+    this.console      = require('./handlers/console.js')
+    this.eventHandler = new (require('./handlers/events.js'))(this)
 
-    this.login(this.config.token)
+    this.login(this.tokens.discord)
   }
 }
 
-new client()
+new Johny()
