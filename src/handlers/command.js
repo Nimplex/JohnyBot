@@ -15,6 +15,6 @@ module.exports = async message => {
   })
   .catch(error => { 
     Johny.console.error(error)
-    Johny.models.error(error)
+    Johny.models.error(message, error)
   })
 }

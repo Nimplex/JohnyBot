@@ -22,6 +22,6 @@ module.exports = data => {
   if (conf.footer)      embed.setFooter(conf.footer)
   if (conf.timestamp)   embed.setTimestamp(conf.timestamp)
   if (conf.color)       embed.setColor(conf.color)
-  if (conf.fields)      conf.fields.forEach(field => embed.addField(field[0], field[1], field[2] || false))
+  if (conf.fields) {    conf.fields.forEach(field => embed.addField(field[0], field[1], field[2] || false)) }
   conf.object.channel.send(embed)
 }

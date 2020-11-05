@@ -5,6 +5,7 @@ exports.exec = async ({ message, args }) => {
 exports.data = {
   triggers: ['test'],
   description: 'test',
+  usage: undefined,
   permissions: {
     bot: [],
     user: []
