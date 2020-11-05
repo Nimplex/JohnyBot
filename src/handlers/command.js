@@ -13,5 +13,8 @@ module.exports = async message => {
     message: message,
     args: args
   })
-  .catch(error => Johny.console.error(error))
+  .catch(error => { 
+    Johny.console.error(error)
+    Johny.models.error(error)
+  })
 }
