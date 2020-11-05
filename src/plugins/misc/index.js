@@ -6,4 +6,5 @@ module.exports = {
   name: ':gear: Misc',
   id: 'misc',
   commands: commands,
+  dev: false
 }

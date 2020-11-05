@@ -2,6 +2,7 @@ module.exports = async message => {
   let [commandName, ...args] = message.content.slice(Johny.prefix.length).split(/ +/g)
   let command
   await Johny.plugins.forEach(plugin => {
+    if (plugin.dev && message.author.id !== "364056796932997121") return
     const match = plugin.commands.find(cmd => cmd.data.triggers && cmd.data.triggers.includes(commandName.toLowerCase()))
     if (match) command = match
   })
