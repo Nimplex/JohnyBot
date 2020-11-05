@@ -6,6 +6,8 @@ module.exports = async message => {
     if (match) command = match
   })
   if (!command) return
+  if (!message.member.permissions.has(command.data.permissions.user)) return
+  if (!message.guild.me.permissions.has(command.data.permissions.bot)) return Johny.models.error(message, `I'm missing permissions: ${command.data.permissions.bot}`)
   command.exec({
     command: command,
     message: message,
