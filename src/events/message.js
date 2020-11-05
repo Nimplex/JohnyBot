@@ -1,4 +1,4 @@
 module.exports = message => {
-  if (message.author.bot) return
-  Johny.models.embed({ object: message })
+  if (message.author.bot || !message.guild || !message.content.startsWith(Johny.prefix)) return
+  require('../handlers/command')(message)
 }
