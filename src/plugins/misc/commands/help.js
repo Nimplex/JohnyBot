@@ -44,7 +44,7 @@ exports.exec = async ({ message, args }) => {
 
 exports.data = {
   triggers: ['help'],
-  description: 'help',
+  description: 'Get help about chosen plugin or command.',
   usage: '[command/plugin]',
   permissions: {
     bot: [],
