@@ -1,4 +1,4 @@
-exports.execute = async ({ message, args }) => {
+exports.exec = async ({ message, args }) => {
   const mention = message.mentions.members.first()
   if (!mention) return Johny.models.error(message, 'You should mention someone first.')
   if (!mention.kickable) return Johny.models.error(message, `You can't kick ${mention.user.tag}.`)
