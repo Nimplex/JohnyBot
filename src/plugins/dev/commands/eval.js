@@ -5,28 +5,26 @@ const clean = text => {
 
 exports.exec = async ({ message, args }) => {
   try {
+    message.react('👍')
+
     const code = args.join(' ');
     let evaled = eval(code);
 
     if (typeof evaled !== 'string') evaled = require('util').inspect(evaled);
 
-    if (args[0] == '\'chat_output\'') return message.channel.send(`\`\`\`${evaled}\`\`\``)
-    Johny.http('https://hastebin.com/documents', { method: 'post', body: evaled }).then(res => res.json()).then(json => { 
-      Johny.models.embed({
-        object: message.author,
-        title: 'Success',
-        description: `[bin](https://hastebin.com/${json.key}) | [raw](https://hastebin.com/raw/${json.key})`,
-      })
+    const hasteurl = await Johny.models.hastebin(evaled)
+    Johny.models.embed({
+      object: message.author,
+      title: 'Success',
+      description: `[bin](${hasteurl[0]}) | [raw](${hasteurl[1]})`,
     })
   } catch (err) {
-    if (args[0] == '\'chat_output\'') return message.channel.send(`\`\`\`${err}\`\`\``)
-    Johny.http('https://hastebin.com/documents', { method: 'post', body: err }).then(res => res.json()).then(json => { 
-      Johny.models.embed({
-        object: message.author,
-        title: 'Error',
-        color: Johny.colors.red,
-        description: `[bin](https://hastebin.com/${json.key}) | [raw](https://hastebin.com/raw/${json.key})`,
-      })
+    const hasteurl = await Johny.models.hastebin(err)
+    Johny.models.embed({
+      object: message.author,
+      title: 'Error',
+      color: Johny.colors.red,
+      description: `[bin](${hasteurl[0]}) | [raw](${hasteurl[1]})`,
     })
   }
 }
