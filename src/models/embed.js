@@ -9,7 +9,7 @@ module.exports = data => {
     title: undefined,
     description: undefined,
     fields: [],
-    footer: `Invoked by ${data.object.author.tag}`,
+    footer: `Invoked by ${data.object.author ? data.object.author.tag : data.object.tag}`,
     timestamp: new Date(),
     color: Johny.colors.yellow
   }, data)
@@ -23,5 +23,6 @@ module.exports = data => {
   if (conf.timestamp)   embed.setTimestamp(conf.timestamp)
   if (conf.color)       embed.setColor(conf.color)
   if (conf.fields) {    conf.fields.forEach(field => embed.addField(field[0], field[1], field[2] || false)) }
-  conf.object.channel.send(embed)
+  if (conf.object.channel) conf.object.channel.send(embed)
+  else conf.object.send(embed)
 }

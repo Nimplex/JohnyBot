@@ -22,7 +22,7 @@ exports.exec = async ({ message, args }) => {
 exports.data = {
   triggers: ['serverinfo', 'server'],
   description: 'Check informations about server.',
-  usage: '',
+  usage: undefined,
   permissions: {
     bot: ['MANAGE_GUILD'],
     member: [''],
