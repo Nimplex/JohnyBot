@@ -21,7 +21,7 @@ exports.exec = async ({ message, args }) => {
       let commands = []
       plugin.commands.forEach(command => {
         if (commands.includes(command.data.triggers[0])) return
-        commands.push(command.data.triggers[0])
+        commands.push(`${command.data.triggers[0]} `)
       })
       Johny.models.embed({
         object: message,
