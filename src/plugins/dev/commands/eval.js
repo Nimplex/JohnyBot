@@ -10,6 +10,7 @@ exports.exec = async ({ message, args }) => {
 
     if (typeof evaled !== 'string') evaled = require('util').inspect(evaled);
 
+    if (args[0] == '\'chat_output\'') return message.channel.send(`\`\`\`${evaled}\`\`\``)
     Johny.http('https://hastebin.com/documents', { method: 'post', body: evaled }).then(res => res.json()).then(json => { 
       Johny.models.embed({
         object: message.author,
@@ -18,6 +19,7 @@ exports.exec = async ({ message, args }) => {
       })
     })
   } catch (err) {
+    if (args[0] == '\'chat_output\'') return message.channel.send(`\`\`\`${err}\`\`\``)
     Johny.http('https://hastebin.com/documents', { method: 'post', body: err }).then(res => res.json()).then(json => { 
       Johny.models.embed({
         object: message.author,
