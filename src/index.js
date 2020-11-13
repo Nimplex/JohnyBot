@@ -17,4 +17,4 @@ class Johny extends Client {
   }
 }
 
-new Johny()
+new Johny({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'] })
