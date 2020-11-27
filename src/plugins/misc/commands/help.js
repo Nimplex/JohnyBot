@@ -13,7 +13,7 @@ exports.exec = async ({ message, args }) => {
         title: `${command.data.triggers[0]} - Help`,
         fields: [
           ['Triggers', `\`\`\`${command.data.triggers}\`\`\``],
-          ['Description', `\`\`\`${command.data.description}\`\`\``],
+          ['Description', `\`\`\`${command.data.description || 'none'}\`\`\``],
           ['Usage', `\`\`\`${Johny.prefix}${command.data.triggers[0]} ${command.data.usage || ''}\`\`\``]
         ]
       })
